@@ -3,6 +3,7 @@ package com.company.enroller.persistence;
 import ch.qos.logback.core.encoder.EchoEncoder;
 import com.company.enroller.model.Participant;
 import org.hibernate.Transaction;
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
