@@ -40,8 +40,5 @@ public class Participant {
         this.password = password;
     }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+
 }
