@@ -1,8 +1,8 @@
-package com.company.enroller.security;
+//package com.company.enroller;
 
 import com.company.enroller.model.Participant;
 import com.company.enroller.persistence.ParticipantService;
-import org.hibernate.engine.Collections;
+//import org.hibernate.engine.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.company.enroller.security;
+package com.company.enroller;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -25,9 +25,9 @@ import java.util.Date;
 
 public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
    private AuthenticationManager authenticationManager;
-   private final String secret;
-   private final String issuer;
-   private final int tokenExpiration;
+   private String secret;
+   private String issuer;
+   private int tokenExpiration;
 
    public JWTAuthenticationFilter(AuthenticationManager authenticationManager, String secret, String issuer, int tokenExpiration) {
        super(new AntPathRequestMatcher("/api/tokens", HttpMethod.POST.name()));

@@ -17,7 +17,7 @@ Uruchom aplikację Springową - klasa `App`.
 Źródła aplikacji frontendowej są w `src/main/frontend`. Wykonaj tam
 
 ```
-npm install
+npm incd 
 npm run serve
 ```
 
