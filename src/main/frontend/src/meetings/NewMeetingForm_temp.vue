@@ -18,6 +18,7 @@
         data() {
             return {
                 newMeeting: {participants: []},
+				
                 adding: false,
                 error: false
             };
@@ -25,18 +26,18 @@
         methods: {
             addNewMeeting() {
                 this.error = false;
+				console.log("Nowe spotkanie z formularza");
+				console.log(this.newMeeting);
                 if (this.newMeeting.title) {
-				
-				this.$http.post('meetings/add', this.newMeeting)
+                    this.$emit('added', this.newMeeting);
+                    //this.newMeeting = {participants: []};
+					
+					this.$http.post('meetings/add', this.newMeeting)
 					.then(() => {
                         this.success('Utworzono spotkanie.');
                         this.adding = false;
                     })
                     .catch(response => this.failure('Błąd przy tworzeniu spotkania. Kod odpowiedzi: ' + response.status));
-					
-				
-                    this.$emit('added', this.newMeeting);
-                    this.newMeeting = {participants: []};
                     
                 } else {
                     this.error = true;
