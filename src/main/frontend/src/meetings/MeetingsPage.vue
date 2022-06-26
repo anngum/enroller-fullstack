@@ -11,7 +11,7 @@
 
     <meetings-list :meetings="meetings"
                    :username="username"
-                   @attend="addMeetingParticipant($event)"
+				   @attend="addMeetingParticipant($event)"
                    @unattend="removeMeetingParticipant($event)"
                    @delete="deleteMeeting($event)"></meetings-list>
   </div>
@@ -25,6 +25,7 @@
         components: {NewMeetingForm, MeetingsList},
         props: ['username'],
         data() {
+			this.getMeetings();
             return {
                 meetings: []
             };
@@ -41,7 +42,17 @@
             },
             deleteMeeting(meeting) {
                 this.meetings.splice(this.meetings.indexOf(meeting), 1);
-            }
+            },
+			
+			getMeetings(){
+				var x = this.$http.get('meetings')
+				.then(response => {
+                        this.meetings = response.body;
+                    });
+				console.log(x);
+				return x;
+			
+			}
         }
     }
 </script>
